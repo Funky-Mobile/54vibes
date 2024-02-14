@@ -37,6 +37,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: WebViewWidget(controller: controller),
       ),
     );

@@ -2,9 +2,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
-        android:label="fifty_four_vibes"
+        android:label="54vibes"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@drawable/vibes_logo">
         <activity
             android:name=".MainActivity"
             android:exported="true"

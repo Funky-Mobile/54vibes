@@ -1,4 +1,5 @@
 import 'package:fifty_four_vibes/Screens/homepage.dart';
+import 'package:fifty_four_vibes/Screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,7 @@ void main() {
 
       //<--set the main/home route--
       home: Homepage(),
+      // home: SplashScreen(),
     )
   );
 }
