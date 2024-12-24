@@ -1,4 +1,4 @@
-import 'package:fifty_four_vibes/splash_screen/widgets/splash_screen_widget.dart';
+import 'package:fifty_four_vibes/splash_screen/widgets/allow_push_notification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +10,7 @@ void main() {
 
       //<--set the main/home route--
       // home: Homepage(),
-      home: SplashScreenWidget(),
+      home: AllowPushNotification(),
     )
   );
 }
