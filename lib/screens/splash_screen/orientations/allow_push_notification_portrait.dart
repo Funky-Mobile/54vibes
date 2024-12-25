@@ -61,7 +61,12 @@ class AllowPushNotificationPortrait extends StatelessWidget {
                 ),
 
                 // introduce the customized text button
-                const AppTextButton(buttonText: "Maybe Later"),
+                AppTextButton(
+                  buttonText: "Maybe Later",
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/authentication_screen");
+                  },
+                ),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
               ],
