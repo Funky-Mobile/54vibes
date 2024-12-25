@@ -73,7 +73,6 @@ class AllowPushNotificationLandscape extends StatelessWidget {
                   const AppTextButton(buttonText: "Maybe Later"),
 
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-
                 ],
               ),
 
