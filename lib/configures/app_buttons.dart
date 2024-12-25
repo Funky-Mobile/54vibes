@@ -68,15 +68,16 @@ class OutlinedAppButton extends StatelessWidget {
 }
 
 class AppTextButton extends StatelessWidget {
+
   final String buttonText;
-  const AppTextButton({super.key, required this.buttonText});
+  final Function()? onPressed;
+
+  const AppTextButton({super.key, required this.buttonText, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {
-          // what happens when this text button is pressed?
-        },
+        onPressed: onPressed,
         child: Text(
           buttonText,
           style: const TextStyle(
