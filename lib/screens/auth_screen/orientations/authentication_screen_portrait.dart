@@ -21,8 +21,12 @@ class AuthenticationScreenPortrait extends StatelessWidget {
               // introduce the app icon widget
               const AppIconWidget(containerWidth: 0.3),
 
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08),
+
               // introduce the app header text
-              const AppHeaderText(headerText: "Experience Music\nIn Real-Time\nWith Others.", fontSize: 45, fontWeight: FontWeight.w500),
+              const AppHeaderText(headerText: "Experience Music\nIn Real-Time\nWith Others.", fontSize: 45, fontWeight: FontWeight.w500, lineHeight: 1.5,),
+
+              SizedBox(height: MediaQuery.of(context).size.height * 0.08),
 
               // if the screen size is less than 400, show the buttons in Column layout
               // else use the row-and-column layout
