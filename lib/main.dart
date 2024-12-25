@@ -1,16 +1,19 @@
+import 'package:fifty_four_vibes/screens/auth_screen/orientations/authentication_screen_portrait.dart';
 import 'package:fifty_four_vibes/screens/splash_screen/allow_push_notification.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+      MaterialApp(
       //<--disable the debug badge at the right top corner of the
       //<--mobile screen
       debugShowCheckedModeBanner: false,
 
       //<--set the main/home route--
-      // home: Homepage(),
-      home: AllowPushNotification(),
+      routes: <String, WidgetBuilder> {
+        '/': (BuildContext context) => const AllowPushNotification(),
+        '/authentication_screen': (BuildContext context) => const AuthenticationScreenPortrait()
+      },
     )
   );
 }
