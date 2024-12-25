@@ -1,5 +1,5 @@
-import 'package:fifty_four_vibes/configurers/app_buttons.dart';
-import 'package:fifty_four_vibes/configurers/app_colors.dart';
+import 'package:fifty_four_vibes/configures/app_buttons.dart';
+import 'package:fifty_four_vibes/configures/app_colors.dart';
 import 'package:fifty_four_vibes/splash_screen/widgets/app_icon_widget.dart';
 import 'package:fifty_four_vibes/splash_screen/widgets/push_notification_reason_widget.dart';
 import 'package:flutter/material.dart';
