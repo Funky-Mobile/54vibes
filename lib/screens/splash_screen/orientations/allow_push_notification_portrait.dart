@@ -1,8 +1,11 @@
 import 'package:fifty_four_vibes/configures/app_buttons.dart';
 import 'package:fifty_four_vibes/configures/app_colors.dart';
-import 'package:fifty_four_vibes/splash_screen/widgets/app_icon_widget.dart';
-import 'package:fifty_four_vibes/splash_screen/widgets/push_notification_reason_widget.dart';
+import 'package:fifty_four_vibes/configures/app_texts.dart';
+import 'package:fifty_four_vibes/screens/splash_screen/widgets/push_notification_reason_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../configures/app_icon_widget.dart';
+
 
 class AllowPushNotificationPortrait extends StatelessWidget {
   const AllowPushNotificationPortrait({super.key});
@@ -40,18 +43,8 @@ class AllowPushNotificationPortrait extends StatelessWidget {
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  "Push Notification",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 35
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              // introduce the app header text
+              const AppHeaderText(headerText: "Push Notification", fontSize: 35, fontWeight: FontWeight.w900),
 
               // introduce the push notification reason widget
               const PushNotificationReasonWidget(reason: "Allow us to notify you\nwhen hot new music is\nreleased"),
@@ -59,7 +52,7 @@ class AllowPushNotificationPortrait extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * 0.05),
 
               // introduce the customized outlined button
-              OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false),
+              Expanded(child: OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false)),
 
               // introduce the customized text button
               const AppTextButton(buttonText: "Maybe Later"),

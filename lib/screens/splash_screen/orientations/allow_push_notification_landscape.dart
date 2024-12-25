@@ -1,9 +1,8 @@
-import 'package:fifty_four_vibes/splash_screen/widgets/push_notification_reason_widget.dart';
+import 'package:fifty_four_vibes/screens/splash_screen/widgets/push_notification_reason_widget.dart';
 import 'package:flutter/material.dart';
-
-import '../../configures/app_buttons.dart';
-import '../../configures/app_colors.dart';
-import 'app_icon_widget.dart';
+import '../../../configures/app_buttons.dart';
+import '../../../configures/app_colors.dart';
+import '../../../configures/app_icon_widget.dart';
 
 class AllowPushNotificationLandscape extends StatelessWidget {
   const AllowPushNotificationLandscape({super.key});
