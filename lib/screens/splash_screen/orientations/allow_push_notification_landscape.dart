@@ -69,7 +69,12 @@ class AllowPushNotificationLandscape extends StatelessWidget {
                   OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: true),
 
                   // introduce the customized text button
-                  const AppTextButton(buttonText: "Maybe Later"),
+                  AppTextButton(
+                    buttonText: "Maybe Later",
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/authentication_screen");
+                    },
+                  ),
 
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 ],
