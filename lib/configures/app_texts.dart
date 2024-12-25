@@ -4,8 +4,9 @@ class AppHeaderText extends StatelessWidget {
   final String headerText;
   final double fontSize;
   final FontWeight fontWeight;
+  final double lineHeight;
 
-  const AppHeaderText({super.key, required this.headerText, required this.fontSize, required this.fontWeight});
+  const AppHeaderText({super.key, required this.headerText, required this.fontSize, required this.fontWeight, required this.lineHeight});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,10 @@ class AppHeaderText extends StatelessWidget {
       child: Text(
         headerText,
         style: TextStyle(
-            color: Colors.white,
-            fontWeight: fontWeight,
-            fontSize: fontSize
+          color: Colors.white,
+          fontWeight: fontWeight,
+          fontSize: fontSize,
+          height: lineHeight
         ),
         textAlign: TextAlign.center,
       ),
