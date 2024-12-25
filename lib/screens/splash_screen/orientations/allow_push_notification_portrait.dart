@@ -17,48 +17,55 @@ class AllowPushNotificationPortrait extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
 
-              //introduce the app icon widget
-              const AppIconWidget(containerWidth: 0.3),
+                //introduce the app icon widget
+                const AppIconWidget(containerWidth: 0.3),
 
-              // introduce the push notification reason widget
-              const PushNotificationReasonWidget(reason: "In order to provide the best experience we\nask you to enable the following permissions:"),
+                // introduce the push notification reason widget
+                const PushNotificationReasonWidget(reason: "In order to provide the best experience we\nask you to enable the following permissions:"),
 
-              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
 
-              Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.withOpacity(0.4), width: 2),
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey.withOpacity(0.3)
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.2,
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey.withOpacity(0.4), width: 2),
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.grey.withOpacity(0.3)
+                  ),
+                  child: const Image(image: AssetImage("assets/icons/notifications_active_50dp_EF6F06_FILL0_wght500_GRAD0_opsz48.png")),
                 ),
-                child: const Image(image: AssetImage("assets/icons/notifications_active_50dp_EF6F06_FILL0_wght500_GRAD0_opsz48.png")),
-              ),
 
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.03),
 
-              // introduce the app header text
-              const AppHeaderText(headerText: "Push Notification", fontSize: 35, fontWeight: FontWeight.w900),
+                // introduce the app header text
+                const AppHeaderText(headerText: "Push Notification", fontSize: 35, fontWeight: FontWeight.w900, lineHeight: 1.1,),
 
-              // introduce the push notification reason widget
-              const PushNotificationReasonWidget(reason: "Allow us to notify you\nwhen hot new music is\nreleased"),
+                // introduce the push notification reason widget
+                const PushNotificationReasonWidget(reason: "Allow us to notify you\nwhen hot new music is\nreleased"),
 
-              SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
 
-              // introduce the customized outlined button
-              Expanded(child: OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false)),
+                // introduce the customized outlined button
+                Row(
+                  children: [
+                    Expanded(child: OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false)),
+                  ],
+                ),
 
-              // introduce the customized text button
-              const AppTextButton(buttonText: "Maybe Later"),
+                // introduce the customized text button
+                const AppTextButton(buttonText: "Maybe Later"),
 
-              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-            ],
+                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              ],
+            ),
           ),
         ),
       ),
