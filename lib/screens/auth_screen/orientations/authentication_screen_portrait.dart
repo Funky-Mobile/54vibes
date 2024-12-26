@@ -19,7 +19,10 @@ class AuthenticationScreenPortrait extends StatelessWidget {
             children: [
               
               // introduce the app icon widget
-              const AppIconWidget(containerWidth: 0.3),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: AppIconWidget(containerWidth: 0.3),
+              ),
 
               SizedBox(height: MediaQuery.of(context).size.height * 0.08),
 
@@ -30,12 +33,36 @@ class AuthenticationScreenPortrait extends StatelessWidget {
 
               // if the screen size is less than 400, show the buttons in Column layout
               // else use the row-and-column layout
-              MediaQuery.of(context).size.width < 400? Text("data") : 
-              
-                  
-              // if the screen size.width is above 400
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              MediaQuery.of(context).size.width < 400?
+               Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                 child: Column(
+                   children: [
+                     // introduce the custom outlined button
+                     AuthOutlinedButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor),
+
+                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
+                     AuthOutlinedButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor),
+
+                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
+                     const AuthIconButton(buttonText: "Continue With Google", icon: "assets/icons/google_PNG19635.png", iconWidth: 0.1),
+
+                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
+                     const AuthIconButton(buttonText: "Continue With Facebook", icon: "assets/icons/Facebook-Icon-PNG-1.png", iconWidth: 0.08),
+
+                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+
+                     const AuthIconButton(buttonText: "Continue With Apple", icon: "assets/icons/apple-512.png", iconWidth: 0.08),
+
+                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                   ],
+                 ),
+               )
+              : Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
                 child: Column(
                   children: [
                     Row(
@@ -92,3 +119,21 @@ class AuthIconButton extends StatelessWidget {
     );
   }
 }
+
+class AuthOutlinedButton extends StatelessWidget {
+
+  final String buttonText;
+  final Color buttonBackgroundColor;
+
+  const AuthOutlinedButton({super.key, required this.buttonText, required this.buttonBackgroundColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: OutlinedAppButton(buttonText: buttonText, buttonBackgroundColor: buttonBackgroundColor, isLandscape: false)),
+      ],
+    );
+  }
+}
+
