@@ -115,14 +115,18 @@ class AppIconButton extends StatelessWidget {
           maximumSize: MediaQuery.of(context).size * 0.5
       ),
 
-      label: Text(
-        buttonText,
-        style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 22
+      label: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          buttonText,
+          style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 22
+          ),
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
         ),
-        textAlign: TextAlign.center,
       ),
     );
   }
