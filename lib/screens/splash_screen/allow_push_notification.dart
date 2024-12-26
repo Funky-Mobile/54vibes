@@ -1,6 +1,7 @@
-import 'package:fifty_four_vibes/splash_screen/widgets/allow_push_notification_landscape.dart';
-import 'package:fifty_four_vibes/splash_screen/widgets/allow_push_notification_portrait.dart';
 import 'package:flutter/material.dart';
+
+import 'orientations/allow_push_notification_landscape.dart';
+import 'orientations/allow_push_notification_portrait.dart';
 
 class AllowPushNotification extends StatelessWidget {
   const AllowPushNotification({super.key});

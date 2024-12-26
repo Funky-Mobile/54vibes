@@ -6,9 +6,8 @@ class AppIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width * containerWidth,
-      padding: const EdgeInsets.all(8.0),
       child: const Image(image: AssetImage("assets/logo/54vibes-logo.png")),
     );
   }
