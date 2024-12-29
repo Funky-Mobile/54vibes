@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
 
 class OutlinedAppButton extends StatelessWidget {
+
   final String buttonText;
   final Color buttonBackgroundColor;
   final bool isLandscape;
-  const OutlinedAppButton({super.key, required this.buttonText, required this.buttonBackgroundColor, required this.isLandscape});
+  final String pageRoute;
+  final Color? buttonTextColor;
+
+  const OutlinedAppButton({super.key, required this.buttonText, required this.buttonBackgroundColor, required this.isLandscape, required this.pageRoute, this.buttonTextColor});
 
   @override
   Widget build(BuildContext context) {
     return isLandscape? OutlinedButton(
+
     onPressed: () {
-      //the user should allow notification when he press this button
-      },
+      Navigator.pushNamed(context, pageRoute);
+
+    },
 
           style: OutlinedButton.styleFrom(
               side: BorderSide.none,
@@ -27,8 +33,8 @@ class OutlinedAppButton extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               buttonText,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: buttonTextColor ?? Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 22
               ),
@@ -37,7 +43,7 @@ class OutlinedAppButton extends StatelessWidget {
           )
       ) : OutlinedButton(
           onPressed: () {
-            //the user should allow notification when he press this button
+            Navigator.pushNamed(context, pageRoute);
           },
 
           style: OutlinedButton.styleFrom(
@@ -54,8 +60,8 @@ class OutlinedAppButton extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               buttonText,
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: buttonTextColor ?? Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 22
               ),
