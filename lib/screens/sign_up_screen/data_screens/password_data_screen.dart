@@ -16,7 +16,7 @@ class PasswordDataScreen extends StatelessWidget {
         leading: IconButton(
             onPressed: (){
               //go back to the authentication screen
-              Navigator.pushNamed(context, '/authentication_screen');
+              Navigator.pushNamed(context, '/email_data_screen');
             },
             icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white)
         ), // the back button
@@ -48,7 +48,7 @@ class PasswordDataScreen extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: true, hintText: '',),
+                const AppFormFieldWithPassword(isPassword: true, hintText: '', inputType: TextInputType.visiblePassword),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
@@ -57,7 +57,13 @@ class PasswordDataScreen extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const Row(
                   children: [
-                    Expanded(child: OutlinedAppButton(buttonText: 'Next', buttonBackgroundColor: Colors.white, isLandscape: false, pageRoute: 'pageRoute', buttonTextColor: Colors.black)),
+                    Expanded(child: OutlinedAppButton(
+                        buttonText: 'Next',
+                        buttonBackgroundColor: Colors.white,
+                        isLandscape: false,
+                        pageRoute: '/dob_data_screen',
+                        buttonTextColor: Colors.black
+                    )),
                   ],
                 ),
 
