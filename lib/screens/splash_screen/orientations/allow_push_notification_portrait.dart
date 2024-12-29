@@ -56,7 +56,7 @@ class AllowPushNotificationPortrait extends StatelessWidget {
                 // introduce the customized outlined button
                 Row(
                   children: [
-                    Expanded(child: OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false)),
+                    Expanded(child: OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false, pageRoute: '')),
                   ],
                 ),
 
