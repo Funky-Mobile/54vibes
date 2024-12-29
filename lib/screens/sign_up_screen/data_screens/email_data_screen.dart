@@ -48,7 +48,7 @@ class EmailDataScreen extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: false, hintText: 'Enter your mail here'),
+                const AppFormFieldWithPassword(isPassword: false, hintText: 'Enter your mail here', inputType: TextInputType.emailAddress),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
@@ -66,7 +66,6 @@ class EmailDataScreen extends StatelessWidget {
                     )),
                   ],
                 ),
-
                 SizedBox(height: MediaQuery.of(context).size.height * 0.035),
               ],
             ),
