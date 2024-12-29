@@ -74,7 +74,7 @@ class AuthenticationScreenPortrait extends StatelessWidget {
                         SizedBox(width: MediaQuery.of(context).size.width * 0.03),
 
                         // introduce the custom outlined button
-                        Expanded(child: OutlinedAppButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false, pageRoute: '')),
+                        Expanded(child: OutlinedAppButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false, pageRoute: '/sign_up_screen')),
                       ],
                     ),
 

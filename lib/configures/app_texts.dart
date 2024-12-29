@@ -46,3 +46,23 @@ class App25PointsLabel extends StatelessWidget {
     );
   }
 }
+
+
+class AppNormalPointsLabel extends StatelessWidget {
+
+  final String label;
+
+  const AppNormalPointsLabel({super.key, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      label,
+      style: const TextStyle(
+          color: Colors.white30,
+          fontWeight: FontWeight.normal
+      ),
+      textAlign: TextAlign.start,
+    );
+  }
+}
