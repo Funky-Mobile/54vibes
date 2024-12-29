@@ -1,26 +1,11 @@
-import 'package:fifty_four_vibes/configures/app_buttons.dart';
-import 'package:fifty_four_vibes/configures/app_form_fields.dart';
-import 'package:fifty_four_vibes/configures/app_texts.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreenPortrait extends StatefulWidget {
+import '../../../configures/app_buttons.dart';
+import '../../../configures/app_form_fields.dart';
+import '../../../configures/app_texts.dart';
 
-  const LoginScreenPortrait({super.key});
-
-  @override
-  State<LoginScreenPortrait> createState() => _LoginScreenPortraitState();
-}
-
-class _LoginScreenPortraitState extends State<LoginScreenPortrait> {
-
-  bool _obscureText = true;
-
-  //a simple function to hide and un-hide the password
-  void hideShowPassword() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
+class PasswordDataScreen extends StatelessWidget {
+  const PasswordDataScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +23,9 @@ class _LoginScreenPortraitState extends State<LoginScreenPortrait> {
 
         // set the page title
         title: const Text(
-          "Login",
+          "Create Account",
           style: TextStyle(
-            color: Colors.white
+              color: Colors.white
           ),
         ),
         centerTitle: true,
@@ -59,24 +44,20 @@ class _LoginScreenPortraitState extends State<LoginScreenPortrait> {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
-                const App25PointsLabel(label: 'Email Or Username'),
+                const App25PointsLabel(label: 'Create A Password'),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: false, hintText: 'Enter your mail here'),
+                const AppFormFieldWithPassword(isPassword: true, hintText: '',),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
-                const App25PointsLabel(label: 'Password'),
+                const AppNormalPointsLabel(label: "Use numbers and characters for strong passwords"),
 
-                SizedBox(height: MediaQuery.of(context).size.height * 0.015),
-
-                const AppFormFieldWithPassword(isPassword: true, hintText: ''),
-
-                SizedBox(height: MediaQuery.of(context).size.height * 0.035),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const Row(
                   children: [
-                    Expanded(child: OutlinedAppButton(buttonText: 'Log In', buttonBackgroundColor: Colors.white, isLandscape: false, pageRoute: 'pageRoute', buttonTextColor: Colors.black)),
+                    Expanded(child: OutlinedAppButton(buttonText: 'Next', buttonBackgroundColor: Colors.white, isLandscape: false, pageRoute: 'pageRoute', buttonTextColor: Colors.black)),
                   ],
                 ),
 
