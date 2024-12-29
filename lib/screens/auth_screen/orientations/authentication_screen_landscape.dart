@@ -46,11 +46,11 @@ class AuthenticationScreenLandscape extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // introduce the custom outlined button
-                    AuthOutlinedButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor),
+                    AuthOutlinedButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor, pageRoute: '/login_screen'),
 
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-                    AuthOutlinedButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor),
+                    AuthOutlinedButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, pageRoute: ''),
 
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 

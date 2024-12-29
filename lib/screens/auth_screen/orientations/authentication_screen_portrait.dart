@@ -39,11 +39,11 @@ class AuthenticationScreenPortrait extends StatelessWidget {
                  child: Column(
                    children: [
                      // introduce the custom outlined button
-                     AuthOutlinedButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor),
+                     AuthOutlinedButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor, pageRoute: '/login_screen',),
 
                      SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
-                     AuthOutlinedButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor),
+                     AuthOutlinedButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, pageRoute: '',),
 
                      SizedBox(height: MediaQuery.of(context).size.height * 0.02),
 
@@ -69,12 +69,12 @@ class AuthenticationScreenPortrait extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         // introduce the custom outlined button
-                        Expanded(child: OutlinedAppButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor, isLandscape: false)),
+                        Expanded(child: OutlinedAppButton(buttonText: "Log In", buttonBackgroundColor: AppColor().greyBackgroundColor, isLandscape: false, pageRoute: "/login_screen",)),
 
                         SizedBox(width: MediaQuery.of(context).size.width * 0.03),
 
                         // introduce the custom outlined button
-                        Expanded(child: OutlinedAppButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false)),
+                        Expanded(child: OutlinedAppButton(buttonText: "Sign Up Free", buttonBackgroundColor: AppColor().defaultColor, isLandscape: false, pageRoute: '')),
                       ],
                     ),
 
@@ -124,14 +124,15 @@ class AuthOutlinedButton extends StatelessWidget {
 
   final String buttonText;
   final Color buttonBackgroundColor;
+  final String pageRoute;
 
-  const AuthOutlinedButton({super.key, required this.buttonText, required this.buttonBackgroundColor});
+  const AuthOutlinedButton({super.key, required this.buttonText, required this.buttonBackgroundColor, required this.pageRoute});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: OutlinedAppButton(buttonText: buttonText, buttonBackgroundColor: buttonBackgroundColor, isLandscape: false)),
+        Expanded(child: OutlinedAppButton(buttonText: buttonText, buttonBackgroundColor: buttonBackgroundColor, isLandscape: false, pageRoute: pageRoute)),
       ],
     );
   }
