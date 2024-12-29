@@ -25,3 +25,24 @@ class AppHeaderText extends StatelessWidget {
     );
   }
 }
+
+
+class App25PointsLabel extends StatelessWidget {
+
+  final String label;
+
+  const App25PointsLabel({super.key, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      label,
+      style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w900,
+          fontSize: 25
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
