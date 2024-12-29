@@ -66,7 +66,7 @@ class AllowPushNotificationLandscape extends StatelessWidget {
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05),
 
                   // introduce the customized outlined button
-                  OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: true),
+                  OutlinedAppButton(buttonText: "Ok, Got it?", buttonBackgroundColor: AppColor().defaultColor, isLandscape: true, pageRoute: ''),
 
                   // introduce the customized text button
                   AppTextButton(
