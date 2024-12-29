@@ -57,7 +57,7 @@ class GenderDataScreen extends StatelessWidget {
                         buttonText: 'Next',
                         buttonBackgroundColor: Colors.white,
                         isLandscape: false,
-                        pageRoute: 'pageRoute',
+                        pageRoute: '/username_data_screen',
                         buttonTextColor: Colors.black
                     )),
                   ],
