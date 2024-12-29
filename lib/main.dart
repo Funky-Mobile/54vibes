@@ -4,6 +4,7 @@ import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/dob_data_sc
 import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/email_data_screen.dart';
 import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/gender_data_screen.dart';
 import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/password_data_screen.dart';
+import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/username_data_screen.dart';
 import 'package:fifty_four_vibes/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,8 @@ void main() {
         '/email_data_screen' : (BuildContext context) => const EmailDataScreen(),
         '/password_data_screen' : (BuildContext context) => const PasswordDataScreen(),
         '/dob_data_screen' : (BuildContext context) => const DobDataScreen(),
-        '/gender_data_screen' : (BuildContext context) => const GenderDataScreen()
+        '/gender_data_screen' : (BuildContext context) => const GenderDataScreen(),
+        '/username_data_screen' : (BuildContext context) => const UsernameDataScreen()
       },
     )
   );
