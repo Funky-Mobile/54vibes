@@ -1,11 +1,11 @@
+import 'package:fifty_four_vibes/configures/app_form_fields.dart';
 import 'package:flutter/material.dart';
 
 import '../../../configures/app_buttons.dart';
-import '../../../configures/app_form_fields.dart';
 import '../../../configures/app_texts.dart';
 
-class PasswordDataScreen extends StatelessWidget {
-  const PasswordDataScreen({super.key});
+class GenderDataScreen extends StatelessWidget {
+  const GenderDataScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class PasswordDataScreen extends StatelessWidget {
         leading: IconButton(
             onPressed: (){
               //go back to the authentication screen
-              Navigator.pushNamed(context, '/email_data_screen');
+              Navigator.pushNamed(context, '/dob_data_screen');
             },
             icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white)
         ), // the back button
@@ -44,15 +44,11 @@ class PasswordDataScreen extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
-                const App25PointsLabel(label: 'Create A Password'),
+                const App25PointsLabel(label: "What's Your Gender?"),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: true, hintText: '', inputType: TextInputType.visiblePassword),
-
-                SizedBox(height: MediaQuery.of(context).size.height * 0.025),
-
-                const AppNormalPointsLabel(label: "Use numbers and characters for strong passwords"),
+                const AppDropDownButtonFormField(hintText: 'Select gender'),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const Row(
@@ -61,12 +57,11 @@ class PasswordDataScreen extends StatelessWidget {
                         buttonText: 'Next',
                         buttonBackgroundColor: Colors.white,
                         isLandscape: false,
-                        pageRoute: '/dob_data_screen',
+                        pageRoute: '/username_data_screen',
                         buttonTextColor: Colors.black
                     )),
                   ],
                 ),
-
                 SizedBox(height: MediaQuery.of(context).size.height * 0.035),
               ],
             ),
