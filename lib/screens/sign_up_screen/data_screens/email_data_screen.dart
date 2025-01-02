@@ -1,14 +1,20 @@
+import 'package:fifty_four_vibes/screens/sign_up_screen/providers/user_model_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../configures/app_buttons.dart';
 import '../../../configures/app_form_fields.dart';
 import '../../../configures/app_texts.dart';
 
-class EmailDataScreen extends StatelessWidget {
+class EmailDataScreen extends ConsumerWidget {
   const EmailDataScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    //declare the notifier for the email data
+    final userNotifier = ref.read(userProvider.notifier);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -48,7 +54,12 @@ class EmailDataScreen extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: false, hintText: 'Enter your mail here', inputType: TextInputType.emailAddress),
+                AppFormFieldWithPassword(
+                  isPassword: false,
+                  hintText: 'Enter your mail here',
+                  inputType: TextInputType.emailAddress,
+                  onValueChanged: (value) => userNotifier.updateEmail(value), //update the user email with this data
+                ),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
 
@@ -57,7 +68,8 @@ class EmailDataScreen extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const Row(
                   children: [
-                    Expanded(child: OutlinedAppButton(
+                    Expanded(
+                        child: OutlinedAppButton(
                         buttonText: 'Next',
                         buttonBackgroundColor: Colors.white,
                         isLandscape: false,
