@@ -7,16 +7,16 @@ class OutlinedAppButton extends StatelessWidget {
   final bool isLandscape;
   final String pageRoute;
   final Color? buttonTextColor;
+  final VoidCallback? onPressed;
 
-  const OutlinedAppButton({super.key, required this.buttonText, required this.buttonBackgroundColor, required this.isLandscape, required this.pageRoute, this.buttonTextColor});
+  const OutlinedAppButton({super.key, required this.buttonText, required this.buttonBackgroundColor, required this.isLandscape, required this.pageRoute, this.buttonTextColor, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return isLandscape? OutlinedButton(
 
-    onPressed: () {
+    onPressed: pageRoute.isEmpty? onPressed : () {
       Navigator.pushNamed(context, pageRoute);
-
     },
 
           style: OutlinedButton.styleFrom(
@@ -42,9 +42,9 @@ class OutlinedAppButton extends StatelessWidget {
             ),
           )
       ) : OutlinedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, pageRoute);
-          },
+        onPressed: pageRoute.isEmpty? onPressed : () {
+          Navigator.pushNamed(context, pageRoute);
+        },
 
           style: OutlinedButton.styleFrom(
               side: BorderSide.none,
