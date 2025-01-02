@@ -9,8 +9,9 @@ class AppFormFieldWithPassword extends StatefulWidget {
   final String hintText;
   final IconData? icon;
   final TextInputType? inputType;
+  final ValueChanged? onValueChanged;
 
-  const AppFormFieldWithPassword({super.key, required this.isPassword, required this.hintText, this.icon, this.inputType});
+  const AppFormFieldWithPassword({super.key, required this.isPassword, required this.hintText, this.icon, this.inputType, this.onValueChanged});
 
   @override
   State<AppFormFieldWithPassword> createState() => AppFormFieldWithPasswordState();
@@ -31,6 +32,8 @@ class AppFormFieldWithPasswordState extends State<AppFormFieldWithPassword> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onValueChanged,
+
         cursorColor: Colors.white24,
 
         obscureText: widget.isPassword? _obscureText : false,
@@ -75,12 +78,14 @@ class AppFormFieldWithPasswordState extends State<AppFormFieldWithPassword> {
 class AppDropDownButtonFormField extends StatelessWidget {
 
   final String hintText;
+  final ValueChanged? onValueChanged;
 
-  const AppDropDownButtonFormField({super.key, required this.hintText});
+  const AppDropDownButtonFormField({super.key, required this.hintText, this.onValueChanged});
 
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
+
       icon: const Icon(CupertinoIcons.chevron_down, color: Colors.white24),
       dropdownColor: Colors.black,
 
@@ -112,7 +117,7 @@ class AppDropDownButtonFormField extends StatelessWidget {
             )
         );
       }).toList(),
-      onChanged: (_) {},
+      onChanged: onValueChanged,
     );
   }
 }
