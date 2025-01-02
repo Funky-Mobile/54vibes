@@ -1,15 +1,21 @@
 import 'package:fifty_four_vibes/configures/app_colors.dart';
+import 'package:fifty_four_vibes/screens/sign_up_screen/providers/user_model_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../configures/app_buttons.dart';
 import '../../../configures/app_form_fields.dart';
 import '../../../configures/app_texts.dart';
 
-class UsernameDataScreen extends StatelessWidget {
+class UsernameDataScreen extends ConsumerWidget {
   const UsernameDataScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    //declare the notifier for the email data
+    final userNotifier = ref.read(userProvider.notifier);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -56,7 +62,12 @@ class UsernameDataScreen extends StatelessWidget {
 
                       SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                      const AppFormFieldWithPassword(isPassword: false, hintText: 'Enter your full name here', inputType: TextInputType.name),
+                      AppFormFieldWithPassword(
+                        isPassword: false,
+                        hintText: 'Enter your full name here',
+                        inputType: TextInputType.name,
+                        onValueChanged: (value) => userNotifier.updateFullName(value),
+                      ),
                     ],
                   ),
 
@@ -69,7 +80,15 @@ class UsernameDataScreen extends StatelessWidget {
                           buttonBackgroundColor: AppColor().defaultColor,
                           isLandscape: false,
                           pageRoute: '',
-                          buttonTextColor: Colors.white
+                          buttonTextColor: Colors.white,
+                          onPressed: () {
+                            final user = ref.watch(userProvider);
+                            print('Email: ${user.email}');
+                            print('Password: ${user.password}');
+                            print('DoB: ${user.dob}');
+                            print('Gender: ${user.gender}');
+                            print('Full name: ${user.fullName}');
+                        },
                       )),
                     ],
                   ),
