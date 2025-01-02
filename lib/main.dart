@@ -7,26 +7,29 @@ import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/password_da
 import 'package:fifty_four_vibes/screens/sign_up_screen/data_screens/username_data_screen.dart';
 import 'package:fifty_four_vibes/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(
-      MaterialApp(
-      //<--disable the debug badge at the right top corner of the
-      //<--mobile screen
-      debugShowCheckedModeBanner: false,
+      ProviderScope(
+        child: MaterialApp(
+        //<--disable the debug badge at the right top corner of the
+        //<--mobile screen
+        debugShowCheckedModeBanner: false,
 
-      //<--set the main/home route--
-      routes: <String, WidgetBuilder> {
-        '/': (BuildContext context) => const AuthenticationScreen(),
-        '/authentication_screen': (BuildContext context) => const AuthenticationScreen(),
-        '/login_screen' : (BuildContext context) => const LoginScreen(),
-        '/sign_up_screen' : (BuildContext context) => const SignUpScreen(),
-        '/email_data_screen' : (BuildContext context) => const EmailDataScreen(),
-        '/password_data_screen' : (BuildContext context) => const PasswordDataScreen(),
-        '/dob_data_screen' : (BuildContext context) => const DobDataScreen(),
-        '/gender_data_screen' : (BuildContext context) => const GenderDataScreen(),
-        '/username_data_screen' : (BuildContext context) => const UsernameDataScreen()
-      },
-    )
+        //<--set the main/home route--
+        routes: <String, WidgetBuilder> {
+          '/': (BuildContext context) => const AuthenticationScreen(),
+          '/authentication_screen': (BuildContext context) => const AuthenticationScreen(),
+          '/login_screen' : (BuildContext context) => const LoginScreen(),
+          '/sign_up_screen' : (BuildContext context) => const SignUpScreen(),
+          '/email_data_screen' : (BuildContext context) => const EmailDataScreen(),
+          '/password_data_screen' : (BuildContext context) => const PasswordDataScreen(),
+          '/dob_data_screen' : (BuildContext context) => const DobDataScreen(),
+          '/gender_data_screen' : (BuildContext context) => const GenderDataScreen(),
+          '/username_data_screen' : (BuildContext context) => const UsernameDataScreen()
+        },
+            ),
+      )
   );
 }
