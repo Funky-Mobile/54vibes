@@ -1,14 +1,20 @@
+import 'package:fifty_four_vibes/screens/sign_up_screen/providers/user_model_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../configures/app_buttons.dart';
 import '../../../configures/app_form_fields.dart';
 import '../../../configures/app_texts.dart';
 
-class DobDataScreen extends StatelessWidget {
+class DobDataScreen extends ConsumerWidget {
   const DobDataScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    //declare the notifier for the email data
+    final userNotifier = ref.read(userProvider.notifier);
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -48,7 +54,13 @@ class DobDataScreen extends StatelessWidget {
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
 
-                const AppFormFieldWithPassword(isPassword: false, hintText: 'DD/MM/YYYY', icon: Icons.calendar_month_rounded, inputType: TextInputType.number),
+                AppFormFieldWithPassword(
+                  isPassword: false,
+                  hintText: 'DD/MM/YYYY',
+                  icon: Icons.calendar_month_rounded,
+                  inputType: TextInputType.number,
+                  onValueChanged: (value) => userNotifier.updateDob(value),
+                ),
 
                 SizedBox(height: MediaQuery.of(context).size.height * 0.025),
                 const Row(
